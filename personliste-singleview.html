@@ -7,6 +7,15 @@
     <title>Document</title>
   </head>
   <body>
+    <main>
+      <button>Tilbage</button>
+      <article>
+        <h2 class="fornavn"></h2>
+        <p class="efternavn"></p>
+        <p class="email"></p>
+        <!-- <img src="" alt="" class="profilbillede" /> -->
+      </article>
+    </main>
     <script>
       const urlParams = new URLSearchParams(window.location.search);
       const id = urlParams.get("id");
@@ -22,7 +31,18 @@
         //visPersoner();
       }
 
+      function vis() {
+        document.querySelector(".navn").textContent =
+          person.fornavn + " " + person.efternavn;
+        document.querySelector(".titel").textContent = person.titel;
+        document.querySelector(".fødselsdag").textContent = person.fødselsdag;
+        document.querySelector("img").src = "faces/" + person.billede;
+      }
       henData();
+
+      document.addEventListener("button").addEventListener("click", () => {
+        history.back();
+      });
     </script>
   </body>
 </html>
