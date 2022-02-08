@@ -121,10 +121,11 @@
             klon.querySelector(".efternavn").textContent =
               "efternavn: " + person.efternavn;
             klon.querySelector(".email").textContent = "email: " + person.email;
+            // personliste singleview
             klon.querySelector("article").addEventListener("click", () => {
-              // personliste singleview
               location.href = `personliste-singleview.html?id=${person._id}`; //id til at definere den person som man trykker på
             });
+            // --------------------------
             main.appendChild(klon);
           }
         });
